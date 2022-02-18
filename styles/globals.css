@@ -1,16 +1,21 @@
+@import '../public/fonts/Inter/inter.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
-  padding: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+::-moz-selection {
+  background: #000;
+  color: #fff;
 }
-
-* {
-  box-sizing: border-box;
+::selection {
+  background: #000;
+  color: #fff;
 }
