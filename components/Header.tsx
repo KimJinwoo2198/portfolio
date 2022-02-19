@@ -58,10 +58,10 @@ const Header: NextPage = () => {
         className="flex flex-col font-inter py-2 fixed top-0 left-0 right-0 w-full z-50 opacity-80 dark:bg-black dark:text-white"
         ref={HeaderRef}
       >
-        <button onClick={toggleMenuState} className="relative justify-center left-4">
+        <button onClick={toggleMenuState} className="relative justify-center left-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-7 w-7 fill-black"
+            className="h-8 w-8 fill-black"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
