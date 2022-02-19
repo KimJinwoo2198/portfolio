@@ -1,8 +1,9 @@
 # Portfolio
 
-## Used...
+## Used
 
-Inter font
-tailwindcss
-framer-motion
-heroicons
+Inter font  
+tailwindcss  
+framer-motion  
+heroicons  
+~~sujang958~~
