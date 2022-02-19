@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import socialLinkProps from '../typings/socialLinkProps'
@@ -21,15 +21,44 @@ const socialLinks: Record<string, socialLinkProps> = {
 
 const Header: NextPage = () => {
   const [isOpen, setOpen] = useState(false)
+  const [theme, setTheme] = useState('light')
+  const HeaderRef = useRef<HTMLDivElement>(null)
+  const toggleMenuState = () => setOpen(!isOpen)
 
-  const changeMenuState = () => {
-    setOpen(!isOpen)
+  const changeTheme = () => {
+    if (theme === 'light') {
+      document.documentElement.classList.add('dark')
+      setTheme('dark')
+    } else if (theme === 'dark') {
+      document.documentElement.classList.remove('dark')
+      setTheme('light')
+    }
   }
+
+  useEffect(() => {
+    document.documentElement.classList.remove('dark')
+  }, [])
+
+  useEffect(() => {
+    if (isOpen) {
+      const outsideClickHandler = (e: MouseEvent) => {
+        const isInside = HeaderRef.current?.contains(e.target as Node)
+        if (!isInside) {
+          setOpen(false)
+          document.removeEventListener('click', outsideClickHandler)
+        }
+      }
+      document.addEventListener('click', outsideClickHandler)
+    }
+  }, [isOpen])
 
   return (
     <>
-      <div className="flex flex-col font-inter py-2 fixed top-0 left-0 right-0 w-full z-50">
-        <button onClick={changeMenuState} className="relative justify-center left-4 top-2">
+      <div
+        className="flex flex-col font-inter py-2 fixed top-0 left-0 right-0 w-full z-50 opacity-80 dark:bg-black dark:text-white"
+        ref={HeaderRef}
+      >
+        <button onClick={toggleMenuState} className="relative justify-center left-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-7 w-7 fill-black"
@@ -44,7 +73,7 @@ const Header: NextPage = () => {
             />
           </svg>
         </button>
-        <div className="flex flex-col pt-2 fixed top-12 bottom-0 left-0">
+        <div className="flex flex-col py-2 fixed top-8 bottom-0 left-0">
           <AnimatePresence>
             {isOpen && (
               <motion.div
@@ -60,19 +89,22 @@ const Header: NextPage = () => {
                 initial={{ x: -150 }}
                 animate={{ x: 0 }}
                 exit={{ x: -150, opacity: 0 }}
-                className="flex flex-col space-y-4 bg-white h-full py-3 pl-6 pr-12 rounded-r-3xl opacity-80"
+                className="flex flex-col space-y-4 bg-white h-full py-6 pl-6 pr-12 rounded-r-3xl opacity-80 dark:bg-black dark:text-white"
               >
                 {Object.entries(socialLinks).map(([_, socialLink]) => (
                   <div key={socialLink.name}>
                     <Link href={socialLink.src}>
                       <a target="_blank" rel="noreferrer">
-                        <div className="cursor-pointer hover:border-b hover:text-gray-500 border-gray-500">
+                        <div className="cursor-pointer hover:underline hover:text-gray-500 border-gray-500">
                           {socialLink.name}
                         </div>
                       </a>
                     </Link>
                   </div>
                 ))}
+                <button onClick={changeTheme} className="">
+                  {theme === 'light' ? 'Dark Theme 🌙' : 'Light Theme 🌤'}
+                </button>
               </motion.div>
             )}
           </AnimatePresence>
