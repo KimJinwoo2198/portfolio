@@ -2,32 +2,27 @@ import type { NextPage } from 'next'
 import Header from '../components/Header'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
+
+const subjects = [
+  '재미있는 것을',
+  '사람들이 필요로 하는 것을',
+  '사람들이 좋아하는 것을',
+  '흥미로운 것을',
+  '최신 트랜드에 따른 것을',
+  '세상을 바꿀 기술을',
+  '혁신적인 기술을'
+]
 
 const Home: NextPage = () => {
-  const subjects = useMemo(
-    () => [
-      '재미있는 것을',
-      '사람들이 필요로 하는 것을',
-      '사람들이 좋아하는 것을',
-      '흥미로운 것을',
-      '최신 트랜드에 따른 것을',
-      '세상을 바꿀 기술을',
-      '혁신적인 기술을'
-    ],
-    []
-  )
-  const [subject, setSubject] = useState(subjects[0])
   const [subjectNumber, setSubjectNumber] = useState(0)
-
   useEffect(() => {
-    setInterval(() => {
-      subjectNumber === subjects.length - 1
-        ? setSubjectNumber(0)
-        : setSubjectNumber(subjectNumber + 1)
-      setSubject(subjects[subjectNumber])
-    }, 1500)
-  }, [subjects, subjectNumber])
+    const subjectInterval = setInterval(
+      () => setSubjectNumber((prev) => (prev >= subjects.length - 1 ? 0 : prev + 1)),
+      2000
+    )
+    return () => clearInterval(subjectInterval)
+  }, [])
 
   return (
     <>
@@ -77,13 +72,19 @@ const Home: NextPage = () => {
               mass: 1.8
             }}
           >
-            <p className="">저는 {subject} 만들어요.</p>
+            <p className="">
+              저는
+              <motion.span animate={{}} transition={{}}>
+                {` ${subjects[subjectNumber]} `}
+              </motion.span>
+              만들어요.
+            </p>
           </motion.div>
         </div>
         <div className="hidden ml-auto mt-36 mr-36 -rotate-12 xl:inline">
           <motion.div
-            initial={{ x: 80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 10, opacity: 1 }}
             viewport={{ once: true }}
             transition={{
               type: 'spring',
