@@ -55,10 +55,10 @@ const Header: NextPage = () => {
   return (
     <>
       <div
-        className="flex flex-col font-inter py-2 fixed top-0 left-0 right-0 w-full z-50 opacity-80 dark:bg-black dark:text-white"
+        className="grid font-inter py-2 fixed top-0 left-0 right-0 w-full z-50 opacity-80 dark:bg-black dark:text-white"
         ref={HeaderRef}
       >
-        <button onClick={toggleMenuState} className="relative justify-center left-3">
+        <button onClick={toggleMenuState} className="relative justify-self-end right-4 top-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 fill-black"
@@ -73,7 +73,7 @@ const Header: NextPage = () => {
             />
           </svg>
         </button>
-        <div className="flex flex-col py-2 fixed top-8 bottom-0 left-0">
+        <div className="flex flex-col py-2 fixed top-16 -bottom-2 -right-8">
           <AnimatePresence>
             {isOpen && (
               <motion.div
@@ -86,10 +86,10 @@ const Header: NextPage = () => {
                   damping: 60,
                   mass: 1
                 }}
-                initial={{ x: -150 }}
-                animate={{ x: 0 }}
-                exit={{ x: -150, opacity: 0 }}
-                className="flex flex-col space-y-4 bg-white h-full py-6 pl-6 pr-12 rounded-r-3xl opacity-80 dark:bg-black dark:text-white"
+                initial={{ x: 0 }}
+                animate={{ x: -30 }}
+                exit={{ x: 0, opacity: 0 }}
+                className="flex flex-col space-y-4 bg-white h-full py-6 pl-6 pr-12 rounded-l-3xl opacity-80 dark:bg-black dark:text-white"
               >
                 {Object.entries(socialLinks).map(([_, socialLink]) => (
                   <div key={socialLink.name}>

@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Header from '../components/Header'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
@@ -27,7 +26,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-row">
+      <div className="flex flex-row h-screen">
         <div className="flex flex-col justify-center space-y-1 absolute top-64 pl-4 sm:pl-10 md:pl-20 ">
           <motion.div
             className="flex flex-row pl-1 font-inter_thin "
@@ -60,46 +59,29 @@ const Home: NextPage = () => {
             <p className="w-full sm:w-auto">Byungchul</p>
             <p className="bg-black my-2 text-white dark:bg-white dark:text-black">Kim.</p>
           </motion.div>
-          <motion.div
-            className="font-inter text-xl text-gray-500 pl-1"
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              delay: 0,
-              stiffness: 415,
-              damping: 100,
-              mass: 1.8
-            }}
-          >
-            <p className="">
-              저는
-              <motion.span animate={{}} transition={{}}>
-                {` ${subjects[subjectNumber]} `}
-              </motion.span>
-              만들어요.
-            </p>
-          </motion.div>
         </div>
-        <div className="hidden ml-auto mt-36 mr-36 -rotate-12 xl:inline">
-          <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 10, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              type: 'spring',
-              delay: 0.2,
-              stiffness: 415,
-              damping: 100,
-              mass: 1.8
-            }}
-            whileHover={{
-              rotate: [0, 40, -10]
-            }}
-          >
-            <Image src="/img/macbookpro.png" alt="macbook" width={580} height={360} />
-          </motion.div>
-        </div>
+      </div>
+      <div className="flex h-screen">
+        <motion.div
+          className="font-inter text-xl text-gray-500 pl-1"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            type: 'spring',
+            delay: 0,
+            stiffness: 415,
+            damping: 100,
+            mass: 1.8
+          }}
+        >
+          <p className="">
+            저는
+            <motion.span animate={{}} transition={{}}>
+              {` ${subjects[subjectNumber]} `}
+            </motion.span>
+            만들어요.
+          </p>
+        </motion.div>
       </div>
     </>
   )
