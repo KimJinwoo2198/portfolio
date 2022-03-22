@@ -5,5 +5,4 @@
 Inter font  
 tailwindcss  
 framer-motion  
-heroicons  
-~~sujang958~~
+heroicons

@@ -11,7 +11,7 @@ const socialLinks: Record<string, socialLinkProps> = {
   },
   instagram: {
     name: 'Instagram',
-    src: 'https://instagram.com/bottle.___iron'
+    src: 'https://instagram.com/bottle___iron'
   },
   twitter: {
     name: 'Twitter',
@@ -21,23 +21,8 @@ const socialLinks: Record<string, socialLinkProps> = {
 
 const Header: NextPage = () => {
   const [isOpen, setOpen] = useState(false)
-  const [theme, setTheme] = useState('light')
   const HeaderRef = useRef<HTMLDivElement>(null)
   const toggleMenuState = () => setOpen(!isOpen)
-
-  const changeTheme = () => {
-    if (theme === 'light') {
-      document.documentElement.classList.add('dark')
-      setTheme('dark')
-    } else if (theme === 'dark') {
-      document.documentElement.classList.remove('dark')
-      setTheme('light')
-    }
-  }
-
-  useEffect(() => {
-    document.documentElement.classList.remove('dark')
-  }, [])
 
   useEffect(() => {
     if (isOpen) {
@@ -55,10 +40,10 @@ const Header: NextPage = () => {
   return (
     <>
       <div
-        className="grid font-inter py-2 fixed top-0 left-0 right-0 w-full z-50 opacity-80 dark:bg-black dark:text-white"
+        className="grid font-inter py-2 fixed top-0 left-0 right-0 w-full z-50 opacity-80"
         ref={HeaderRef}
       >
-        <button onClick={toggleMenuState} className="relative justify-self-end right-4 top-4">
+        <button onClick={toggleMenuState} className="relative justify-self-end right-8 top-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 fill-black"
@@ -82,34 +67,56 @@ const Header: NextPage = () => {
                 transition={{
                   type: 'spring',
                   delay: 0,
-                  stiffness: 500,
+                  stiffness: 400,
                   damping: 60,
                   mass: 1
                 }}
                 initial={{ x: 0 }}
                 animate={{ x: -30 }}
                 exit={{ x: 0, opacity: 0 }}
-                className="flex flex-col space-y-4 bg-white h-full py-6 pl-6 pr-12 rounded-l-3xl opacity-80 dark:bg-black dark:text-white"
+                className="bg-white h-full rounded-tl-xl shadow-2xl"
               >
-                {Object.entries(socialLinks).map(([_, socialLink]) => (
-                  <div key={socialLink.name}>
-                    <Link href={socialLink.src}>
-                      <a target="_blank" rel="noreferrer">
-                        <div className="cursor-pointer hover:underline hover:text-gray-500 border-gray-500">
-                          {socialLink.name}
-                        </div>
-                      </a>
-                    </Link>
+                <div className="flex relative p-3 border-b border-slate-500/30">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#EC6A5F]"></div>
+                  <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#F4BF50]"></div>
+                  <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#61C454]"></div>
+                </div>
+                <div className="flex flex-col space-y-2 pt-8 pl-6 pr-32">
+                  <h1 className="text-xl">Contact Me</h1>
+                  <div className="space-y-2 pt-1">
+                    {Object.entries(socialLinks).map(([_, socialLink]) => (
+                      <div key={socialLink.name} className="flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+                          />
+                        </svg>
+                        <Link href={socialLink.src}>
+                          <a target="_blank" rel="noreferrer">
+                            <div className="cursor-pointer hover:text-gray-600 border-gray-500 pl-1">
+                              {socialLink.name}
+                            </div>
+                          </a>
+                        </Link>
+                      </div>
+                    ))}
                   </div>
-                ))}
-                <button onClick={changeTheme} className="">
-                  {theme === 'light' ? 'Dark Theme 🌙' : 'Light Theme 🌤'}
-                </button>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
+      <div></div>
     </>
   )
 }
