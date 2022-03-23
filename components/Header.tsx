@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useCallback } from 'react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import socialLinkProps from '../typings/socialLinkProps'
@@ -24,16 +24,22 @@ const Header: NextPage = () => {
   const HeaderRef = useRef<HTMLDivElement>(null)
   const toggleMenuState = () => setOpen(!isOpen)
 
+  const handleUserKeyPress = useCallback((event) => {
+    if (event.key === 'Escape') setOpen(false)
+  }, [])
+
+  const outsideClickHandler = useCallback((e: MouseEvent) => {
+    const isInside = HeaderRef.current?.contains(e.target as Node)
+    if (!isInside) {
+      setOpen(false)
+      document.removeEventListener('click', outsideClickHandler)
+    }
+  }, [])
+
   useEffect(() => {
     if (isOpen) {
-      const outsideClickHandler = (e: MouseEvent) => {
-        const isInside = HeaderRef.current?.contains(e.target as Node)
-        if (!isInside) {
-          setOpen(false)
-          document.removeEventListener('click', outsideClickHandler)
-        }
-      }
       document.addEventListener('click', outsideClickHandler)
+      window.addEventListener('keydown', handleUserKeyPress)
     }
   }, [isOpen])
 
@@ -71,7 +77,7 @@ const Header: NextPage = () => {
                   damping: 60,
                   mass: 1
                 }}
-                initial={{ x: 0 }}
+                initial={{ x: 60 }}
                 animate={{ x: -30 }}
                 exit={{ x: 0, opacity: 0 }}
                 className="bg-white h-full rounded-tl-xl shadow-2xl"
