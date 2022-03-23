@@ -83,9 +83,10 @@ const Home: NextPage = () => {
                 etc.
               </p>
               <p>
-                Backend: Nest.js, GraphQL, Prisma, Go, Express, Python, Node.js, PostgreSQL, MySQL,
-                MongoDB, Docker, etc.
+                Backend: Nest.js, GraphQL, Prisma, Go, Python, Node.js, PostgreSQL, MySQL, MongoDB,
+                etc.
               </p>
+              <p>Others: Linux, Docker, C</p>
             </motion.div>
           </div>
         </div>
