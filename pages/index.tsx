@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Header from '../components/Header'
 import { motion } from 'framer-motion'
+import { skills } from '../components/data'
+import SkillCard from '../components/SkillCard'
 
 const Home: NextPage = () => {
   return (
@@ -16,8 +18,8 @@ const Home: NextPage = () => {
               viewport={{ once: true }}
               transition={{
                 type: 'spring',
-                delay: 0,
-                stiffness: 415,
+                delay: 0.2,
+                stiffness: 250,
                 damping: 100,
                 mass: 1.8
               }}
@@ -30,8 +32,8 @@ const Home: NextPage = () => {
               viewport={{ once: true }}
               transition={{
                 type: 'spring',
-                delay: 0,
-                stiffness: 415,
+                delay: 0.2,
+                stiffness: 250,
                 damping: 100,
                 mass: 1.8
               }}
@@ -44,50 +46,29 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section>
-        <div className="flex flex-row h-screen">
-          <div className="flex flex-col absolute h-2/5 justify-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{
-                delay: 0.2,
-                duration: 1
-              }}
-              variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: -60 }
-              }}
-              className="pl-8 sm:pl-10 md:pl-20 font-inter_bold text-4xl"
-            >
-              I can...
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{
-                delay: 0.1,
-                duration: 1
-              }}
-              variants={{
-                visible: { opacity: 1, y: 0 },
-                hidden: { opacity: 0, y: 80 }
-              }}
-              className="pl-8 sm:pl-10 md:pl-20 pt-4"
-            >
-              {/* Will replace text with logo icons */}
-              <p>
-                Frontend: HTML, CSS, SCSS, Javascript, TypeScript, React.js, Next.js, Svelte,
-                Tailwindcss, Framer Motion, StoryBook, Apollo Client, React Native, Expo, Electron,
-                etc.
-              </p>
-              <p>
-                Backend: Nest.js, GraphQL, Prisma, Go, Python, Node.js, PostgreSQL, MySQL, MongoDB,
-                etc.
-              </p>
-              <p>Others: Linux, Docker, C</p>
-            </motion.div>
+        <div className="grid content-center h-screen">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{
+              delay: 0.2,
+              duration: 1
+            }}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: -60 }
+            }}
+            className="pl-8 sm:pl-10 md:pl-20 font-inter_bold text-4xl"
+          >
+            I can...
+          </motion.div>
+          <div className="flex flex-row flex-grow flex-wrap justify-center pt-4">
+            {Object.entries(skills).map(([_, skill]) => (
+              <span key={skill.name}>
+                <SkillCard name={skill.name} href={skill.href} />
+              </span>
+            ))}
           </div>
         </div>
       </section>

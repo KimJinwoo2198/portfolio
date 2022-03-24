@@ -1,25 +1,9 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react'
-import type { NextPage } from 'next'
+import React, { useEffect, useState, useRef, useCallback, FC } from 'react'
 import Link from 'next/link'
-import socialLinkProps from '../typings/socialLinkProps'
 import { AnimatePresence, motion } from 'framer-motion'
+import { socialLinks } from './data'
 
-const socialLinks: Record<string, socialLinkProps> = {
-  github: {
-    name: 'Github',
-    src: 'https://github.com/chul0721'
-  },
-  instagram: {
-    name: 'Instagram',
-    src: 'https://instagram.com/bottle___iron'
-  },
-  twitter: {
-    name: 'Twitter',
-    src: 'https://twitter.com/chul0721'
-  }
-}
-
-const Header: NextPage = () => {
+const Header: FC = () => {
   const [isOpen, setOpen] = useState(false)
   const HeaderRef = useRef<HTMLDivElement>(null)
   const toggleMenuState = () => setOpen(!isOpen)
@@ -45,10 +29,7 @@ const Header: NextPage = () => {
 
   return (
     <>
-      <div
-        className="grid font-inter py-2 fixed top-0 left-0 right-0 w-full z-50 opacity-80"
-        ref={HeaderRef}
-      >
+      <div className="grid font-inter py-2 fixed top-0 left-0 right-0 w-full z-50" ref={HeaderRef}>
         <button onClick={toggleMenuState} className="relative justify-self-end right-8 top-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +68,7 @@ const Header: NextPage = () => {
                   <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#F4BF50]"></div>
                   <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#61C454]"></div>
                 </div>
-                <div className="flex flex-col space-y-2 pt-8 pl-6 pr-32">
+                <div className="flex flex-col space-y-2 pt-8 pl-6 pr-12">
                   <h1 className="text-xl">Contact Me</h1>
                   <div className="space-y-2 pt-1">
                     {Object.entries(socialLinks).map(([_, socialLink]) => (
@@ -116,6 +97,12 @@ const Header: NextPage = () => {
                       </div>
                     ))}
                   </div>
+                  <h1 className="text-xl pt-4">Notes for</h1>
+                  <p>
+                    This website might not support
+                    <br />
+                    some mobile devices.
+                  </p>
                 </div>
               </motion.div>
             )}
