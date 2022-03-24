@@ -68,28 +68,14 @@ const Header: FC = () => {
                   <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#F4BF50]"></div>
                   <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#61C454]"></div>
                 </div>
-                <div className="flex flex-col space-y-2 pt-8 pl-6 pr-12">
+                <div className="flex flex-col space-y-2 pt-8 pl-6 pr-24">
                   <h1 className="text-xl">Contact Me</h1>
                   <div className="space-y-2 pt-1">
                     {Object.entries(socialLinks).map(([_, socialLink]) => (
                       <div key={socialLink.name} className="flex">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                          />
-                        </svg>
                         <Link href={socialLink.src}>
                           <a target="_blank" rel="noreferrer">
-                            <div className="cursor-pointer hover:text-gray-600 border-gray-500 pl-1">
+                            <div className="cursor-pointer text-slate-500 hover:text-black border-gray-500 pl-1">
                               {socialLink.name}
                             </div>
                           </a>
@@ -97,12 +83,6 @@ const Header: FC = () => {
                       </div>
                     ))}
                   </div>
-                  <h1 className="text-xl pt-4">Notes for</h1>
-                  <p>
-                    This website might not support
-                    <br />
-                    some mobile devices.
-                  </p>
                 </div>
               </motion.div>
             )}
