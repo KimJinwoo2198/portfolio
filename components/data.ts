@@ -1,3 +1,4 @@
+import projectCardProps from '../typings/projectCardProps'
 import skillCardProps from '../typings/skillCardProps'
 import socialLinkProps from '../typings/socialLinkProps'
 
@@ -19,90 +20,107 @@ export const socialLinks: Record<string, socialLinkProps> = {
 export const skills: Record<string, skillCardProps> = {
   html: {
     name: 'HTML',
-    href: 'html.png'
+    src: 'html.png'
   },
   css: {
     name: 'CSS',
-    href: 'css.png'
+    src: 'css.png'
   },
   javascript: {
     name: 'JavaScript',
-    href: 'javascript.png'
+    src: 'javascript.png'
   },
   typescript: {
     name: 'TypeScript',
-    href: 'typescript.png'
+    src: 'typescript.png'
   },
   react: {
     name: 'React.js',
-    href: 'react.webp'
+    src: 'react.webp'
   },
   next: {
     name: 'Next.js',
-    href: 'nextjs.png'
+    src: 'nextjs.png'
   },
   svelte: {
     name: 'Svelte',
-    href: 'svelte.png'
+    src: 'svelte.png'
   },
   tailwind: {
     name: 'Tailwindcss',
-    href: 'tailwindcss.png'
+    src: 'tailwindcss.png'
   },
   framermotion: {
     name: 'Framer Motion',
-    href: 'framermotion.webp'
+    src: 'framermotion.webp'
   },
   storybook: {
     name: 'StoryBook',
-    href: 'storybook.svg'
+    src: 'storybook.svg'
   },
   apollo: {
     name: 'Apollo Client',
-    href: 'apollo.svg'
+    src: 'apollo.svg'
   },
   expo: {
     name: 'Expo',
-    href: 'expo.webp'
+    src: 'expo.webp'
   },
   electron: {
     name: 'Electron',
-    href: 'electron.png'
+    src: 'electron.png'
   },
   nest: {
     name: 'Nest.js',
-    href: 'nestjs.png'
+    src: 'nestjs.png'
   },
   graphql: {
     name: 'GraphQL',
-    href: 'graphql.png'
+    src: 'graphql.png'
   },
   prisma: {
     name: 'Prisma',
-    href: 'prisma.png'
+    src: 'prisma.png'
   },
   go: {
     name: 'Go',
-    href: 'golang.png'
+    src: 'golang.png'
   },
   postgresql: {
     name: 'PostgreSQL',
-    href: 'postgresql.png'
+    src: 'postgresql.png'
   },
   mysql: {
     name: 'MySQL',
-    href: 'mysql.png'
+    src: 'mysql.png'
   },
   mongodb: {
     name: 'MongoDB',
-    href: 'mongodb.webp'
+    src: 'mongodb.webp'
   },
   linux: {
     name: 'Linux',
-    href: 'linux.png'
+    src: 'linux.png'
   },
   docker: {
     name: 'Docker',
-    href: 'docker.webp'
+    src: 'docker.webp'
+  }
+}
+
+export const projects: Record<string, projectCardProps> = {
+  sotongi: {
+    name: '소통이',
+    desc: '새 학기 친구 걱정은 이제 그만! 학교, 반 등의 단위로 나뉜 게시판에서 친구와 친해지세요!',
+    src: 'sotongi.png',
+    color: 'black',
+    href: 'https://github.com/sotongi'
+  },
+  asserlang: {
+    name: '어쩔랭',
+    desc: '유행어 "어쩔티비"에 영감을 받아 만든 난해한 프로그래밍 언어',
+    src: 'asserlang.png',
+    color: 'white',
+    href: 'https://github.com/assertive-lang/asserlang'
   }
 }

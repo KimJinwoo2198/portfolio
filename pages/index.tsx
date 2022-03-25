@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import Header from '../components/Header'
 import { motion } from 'framer-motion'
-import { skills } from '../components/data'
+import { projects, skills } from '../components/data'
 import SkillCard from '../components/SkillCard'
+import ProjectCard from '../components/ProjectCard'
 
 const Home: NextPage = () => {
   return (
@@ -61,12 +62,45 @@ const Home: NextPage = () => {
             }}
             className="pl-8 sm:pl-10 md:pl-20 font-inter_bold text-4xl"
           >
-            I can...
+            Stack
           </motion.div>
           <div className="flex flex-row flex-grow flex-wrap justify-center pt-4">
             {Object.entries(skills).map(([_, skill]) => (
               <span key={skill.name}>
-                <SkillCard name={skill.name} href={skill.href} />
+                <SkillCard name={skill.name} src={skill.src} />
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="grid content-center space-y-24 h-screen">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{
+              delay: 0.2,
+              duration: 1
+            }}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: -60 }
+            }}
+            className="pl-8 sm:pl-10 md:pl-20 font-inter_bold text-4xl"
+          >
+            Projects
+          </motion.div>
+          <div className="flex flex-row flex-grow flex-wrap justify-center md:space-x-8">
+            {Object.entries(projects).map(([_, project]) => (
+              <span key={project.name}>
+                <ProjectCard
+                  name={project.name}
+                  desc={project.desc}
+                  src={project.src}
+                  color={project.color}
+                  href={project.href}
+                />
               </span>
             ))}
           </div>

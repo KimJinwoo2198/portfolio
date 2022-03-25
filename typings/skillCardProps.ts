@@ -1,6 +1,6 @@
 type skillCardProps = {
   name: string
-  href: string
+  src: string
 }
 
 export default skillCardProps

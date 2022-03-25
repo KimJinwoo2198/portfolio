@@ -75,7 +75,7 @@ const Header: FC = () => {
                       <div key={socialLink.name} className="flex">
                         <Link href={socialLink.src}>
                           <a target="_blank" rel="noreferrer">
-                            <div className="cursor-pointer text-slate-500 hover:text-black border-gray-500 pl-1">
+                            <div className="cursor-pointer text-slate-700 hover:text-black pl-1">
                               {socialLink.name}
                             </div>
                           </a>
