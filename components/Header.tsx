@@ -68,20 +68,31 @@ const Header: FC = () => {
                   <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#F4BF50]"></div>
                   <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#61C454]"></div>
                 </div>
-                <div className="flex flex-col space-y-2 pt-8 pl-6 pr-24">
-                  <h1 className="text-xl">Contact Me</h1>
-                  <div className="space-y-2 pt-1">
+                <div className="flex flex-col space-y-2 pt-8 pl-4 pr-20 font-inter_medium">
+                  <Link href="#">Introduction</Link>
+                  <Link href="#stack">Stack</Link>
+                  <Link href="#projects">Projects</Link>
+
+                  <div className="absolute bottom-3 text-sm left-2 font-inter_medium text-blue-500 hover:text-blue-300">
+                    <Link href="https://github.com/chul0721/portfolio">
+                      <a target="_blank">Made with ❤️ in Seoul</a>
+                    </Link>
+                  </div>
+                  <div className="flex absolute bottom-16 left-3 space-x-2">
                     {Object.entries(socialLinks).map(([_, socialLink]) => (
-                      <div key={socialLink.name} className="flex">
-                        <Link href={socialLink.src}>
+                      <div key={socialLink.src} className="flex">
+                        <Link href={socialLink.href}>
                           <a target="_blank" rel="noreferrer">
-                            <div className="cursor-pointer text-slate-700 hover:text-black pl-1">
-                              {socialLink.name}
+                            <div className="cursor-pointer hover:opacity-60">
+                              <img src={`/img/${socialLink.src}`} className="w-5" />
                             </div>
                           </a>
                         </Link>
                       </div>
                     ))}
+                  </div>
+                  <div className="flex absolute bottom-9 left-2 text-sm font-inter_medium">
+                    Discord: chul0721#8165
                   </div>
                 </div>
               </motion.div>

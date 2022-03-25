@@ -4,16 +4,16 @@ import socialLinkProps from '../typings/socialLinkProps'
 
 export const socialLinks: Record<string, socialLinkProps> = {
   github: {
-    name: 'Github',
-    src: 'https://github.com/chul0721'
+    src: 'github.png',
+    href: 'https://github.com/chul0721'
   },
   instagram: {
-    name: 'Instagram',
-    src: 'https://instagram.com/bottle___iron'
+    src: 'instagram.png',
+    href: 'https://instagram.com/bottle___iron'
   },
   twitter: {
-    name: 'Twitter',
-    src: 'https://twitter.com/chul0721'
+    src: 'twitter.png',
+    href: 'https://twitter.com/chul0721'
   }
 }
 

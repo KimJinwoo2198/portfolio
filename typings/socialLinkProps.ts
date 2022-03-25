@@ -1,6 +1,6 @@
 type socialLinkProps = {
-  name: string
   src: string
+  href: string
 }
 
 export default socialLinkProps

@@ -54,13 +54,13 @@ const Home: NextPage = () => {
                 }}
                 className="pl-1 text-lg"
               >
-                프로그래머를 꿈꾸는 평범한 학생 개발자입니다. 👋
+                프로그래머를 꿈꾸는 학생 개발자입니다. 👋
               </motion.div>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section id="stack">
         <div className="grid content-center h-screen">
           <motion.div
             initial="hidden"
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section id="projects">
         <div className="grid content-center h-screen">
           <motion.div
             initial="hidden"
