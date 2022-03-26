@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, useCallback, FC } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { socialLinks } from './data'
+import Image from 'next/image'
 
 const Header: FC = () => {
   const [isOpen, setOpen] = useState(false)
@@ -25,7 +26,7 @@ const Header: FC = () => {
       document.addEventListener('click', outsideClickHandler)
       window.addEventListener('keydown', handleUserKeyPress)
     }
-  }, [isOpen])
+  }, [isOpen, outsideClickHandler, handleUserKeyPress])
 
   return (
     <>
@@ -84,7 +85,11 @@ const Header: FC = () => {
                         <Link href={socialLink.href}>
                           <a target="_blank" rel="noreferrer">
                             <div className="cursor-pointer hover:opacity-60">
-                              <img src={`/img/${socialLink.src}`} className="w-5" />
+                              <Image
+                                src={`/img/${socialLink.src}`}
+                                className="w-5"
+                                alt="SNS Links"
+                              />
                             </div>
                           </a>
                         </Link>

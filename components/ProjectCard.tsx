@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { motion } from 'framer-motion'
 import projectCardProps from '../typings/projectCardProps'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const ProjectCard: FC<projectCardProps> = (props) => {
   const [isHovered, setIsHovered] = useState(false)
@@ -52,13 +53,14 @@ const ProjectCard: FC<projectCardProps> = (props) => {
               {props.desc}
             </div>
           </div>
-          <img
+          <Image
             src={`/img/${props.src}`}
             className={
               isHovered
                 ? `z-0 absolute opacity-100 rounded-2xl border-${props.color}`
                 : `z-0 absolute opacity-60 rounded-2xl border-${props.color}`
             }
+            alt="Projects"
           />
         </motion.div>
       </a>

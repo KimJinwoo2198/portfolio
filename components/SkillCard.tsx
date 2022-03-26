@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import skillCardProps from '../typings/skillCardProps'
 
 const SkillCard: FC<skillCardProps> = (props) => {
@@ -28,9 +29,10 @@ const SkillCard: FC<skillCardProps> = (props) => {
       <div className={isHovered ? 'absolute z-10 font-inter_thin text-black text-sm' : 'hidden'}>
         {props.name}
       </div>
-      <img
+      <Image
         src={`/img/${props.src}`}
         className={isHovered ? 'p-2 z-0 sm:p-4 md:p-7 opacity-50' : 'p-2 sm:p-4 md:p-7'}
+        alt="Stack"
       />
     </motion.div>
   )
