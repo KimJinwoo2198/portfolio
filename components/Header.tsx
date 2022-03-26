@@ -84,11 +84,12 @@ const Header: FC = () => {
                       <div key={socialLink.src} className="flex">
                         <Link href={socialLink.href}>
                           <a target="_blank" rel="noreferrer">
-                            <div className="cursor-pointer hover:opacity-60">
+                            <div className="cursor-pointer hover:opacity-60 w-5">
                               <Image
                                 src={`/img/${socialLink.src}`}
-                                className="w-5"
                                 alt="SNS Links"
+                                width="100%"
+                                height="100%"
                               />
                             </div>
                           </a>

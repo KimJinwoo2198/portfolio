@@ -25,7 +25,7 @@ const ProjectCard: FC<projectCardProps> = (props) => {
             visible: { opacity: 1, y: 0 },
             hidden: { opacity: 0, y: 80 }
           }}
-          className={`flex justify-center items-center relative w-80 text-${props.color} h-48 md:mb-20 md:h-24`}
+          className={`flex justify-center items-center relative w-80 text-${props.color} h-48 md:mb-20 md:h-40`}
           onMouseEnter={checkHovered}
           onMouseLeave={checkHovered}
         >
@@ -61,6 +61,7 @@ const ProjectCard: FC<projectCardProps> = (props) => {
                 : `z-0 absolute opacity-60 rounded-2xl border-${props.color}`
             }
             alt="Projects"
+            layout="fill"
           />
         </motion.div>
       </a>

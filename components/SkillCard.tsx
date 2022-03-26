@@ -29,11 +29,15 @@ const SkillCard: FC<skillCardProps> = (props) => {
       <div className={isHovered ? 'absolute z-10 font-inter_thin text-black text-sm' : 'hidden'}>
         {props.name}
       </div>
-      <Image
-        src={`/img/${props.src}`}
-        className={isHovered ? 'p-2 z-0 sm:p-4 md:p-7 opacity-50' : 'p-2 sm:p-4 md:p-7'}
-        alt="Stack"
-      />
+      <div className="p-2 z-0 sm:p-4 md:p-7">
+        <Image
+          src={`/img/${props.src}`}
+          className={isHovered ? 'opacity-50' : 'opacity-100'}
+          alt="Stack"
+          width="100%"
+          height="100%"
+        />
+      </div>
     </motion.div>
   )
 }
