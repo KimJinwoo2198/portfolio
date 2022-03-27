@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import skillCardProps from '../typings/skillCardProps'
 
