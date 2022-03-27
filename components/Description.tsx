@@ -14,7 +14,7 @@ const Description: FC<descriptionProps> = (props) => {
         damping: 100,
         mass: 1.8
       }}
-      className="pl-8 sm:pl-10 md:pl-20 2xl:pl-40 py-1 pr-8"
+      className="pl-8 sm:pl-10 md:pl-20 2xl:pl-40 py-1"
     >
       {props.description}
     </motion.div>
