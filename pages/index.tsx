@@ -8,6 +8,8 @@ import { socialLinks } from '../components/data'
 import Link from 'next/link'
 import Image from 'next/image'
 import Footer from '../components/Footer'
+import Title from '../components/Title'
+import Description from '../components/Description'
 
 const Home: NextPage = () => {
   return (
@@ -61,7 +63,7 @@ const Home: NextPage = () => {
               프로그래머를 꿈꾸는 학생 개발자입니다. 👋
             </motion.div>
             <motion.div
-              initial={{ y: 40, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
@@ -94,35 +96,9 @@ const Home: NextPage = () => {
       </div>
 
       <div className="snap-center grid content-center h-screen" id="stack">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          transition={{
-            delay: 0.2,
-            duration: 1
-          }}
-          variants={{
-            visible: { opacity: 1, x: 0 },
-            hidden: { opacity: 0, x: -60 }
-          }}
-          className="pl-8 sm:pl-10 md:pl-20 2xl:pl-40 font-inter_bold text-4xl"
-        >
-          Stack
-        </motion.div>
-        <motion.div
-          initial={{ x: -40, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            type: 'spring',
-            delay: 0.5,
-            stiffness: 250,
-            damping: 100,
-            mass: 1.8
-          }}
-          className="pl-8 sm:pl-10 md:pl-20 2xl:pl-40 py-1 pr-8"
-        >
-          제가 사용하는 기술들이에요. 마우스를 위에 올리면 상세 정보를 확인하실 수 있어요.
-        </motion.div>
+        <Title name="Stack" />
+        <Description description="제가 사용하는 기술들이에요. 마우스를 위에 올리면 상세 정보를 확인하실 수 있어요." />
+
         <div className="flex flex-row flex-grow flex-wrap justify-center pt-4">
           {Object.entries(skills).map(([_, skill]) => (
             <span key={skill.name}>
@@ -133,35 +109,8 @@ const Home: NextPage = () => {
       </div>
 
       <div className="snap-center grid content-center h-screen" id="projects">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          transition={{
-            delay: 0.2,
-            duration: 1
-          }}
-          variants={{
-            visible: { opacity: 1, x: 0 },
-            hidden: { opacity: 0, x: -60 }
-          }}
-          className="pl-8 sm:pl-10 md:pl-20 2xl:pl-40 font-inter_bold text-4xl"
-        >
-          Projects
-        </motion.div>
-        <motion.div
-          initial={{ x: -40, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            type: 'spring',
-            delay: 0.5,
-            stiffness: 250,
-            damping: 100,
-            mass: 1.8
-          }}
-          className="pl-8 sm:pl-10 md:pl-20 2xl:pl-40 py-1 pr-8"
-        >
-          제가 참여한 프로젝트들이에요. 아이템을 클릭하면 외부 사이트로 이동해요.
-        </motion.div>
+        <Title name="Projects" />
+        <Description description="제가 참여한 프로젝트들이에요. 아이템을 클릭하면 외부 사이트로 이동해요." />
         <div className="flex flex-row flex-grow flex-wrap justify-center md:space-x-8 pt-24">
           {Object.entries(projects).map(([_, project]) => (
             <span key={project.name}>
@@ -176,6 +125,12 @@ const Home: NextPage = () => {
           ))}
         </div>
       </div>
+
+      <div className="snap-center grid content-center h-screen" id="career">
+        <Title name="Career" />
+        <Description description="저의 여러 경험들이 담긴 경력들이에요." />
+      </div>
+
       <Footer />
     </>
   )

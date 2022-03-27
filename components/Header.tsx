@@ -71,6 +71,7 @@ const Header: FC = () => {
                   <Link href="#">Introduction</Link>
                   <Link href="#stack">Stack</Link>
                   <Link href="#projects">Projects</Link>
+                  <Link href="#career">Career</Link>
                 </div>
               </motion.div>
             )}
