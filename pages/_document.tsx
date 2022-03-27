@@ -11,7 +11,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html className="scroll-smooth snap-mandatory snap-y">
         <Head></Head>
         <Main />
         <NextScript />

@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback, FC } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
-import { socialLinks } from './data'
-import Image from 'next/image'
 
 const Header: FC = () => {
   const [isOpen, setOpen] = useState(false)
@@ -73,19 +71,12 @@ const Header: FC = () => {
                   <Link href="#">Introduction</Link>
                   <Link href="#stack">Stack</Link>
                   <Link href="#projects">Projects</Link>
-
-                  <div className="absolute bottom-3 text-sm left-2 font-inter_medium text-slate-600 hover:text-slate-400">
-                    <Link href="https://github.com/chul0721/portfolio">
-                      <a target="_blank">Made with ❤️ in Seoul</a>
-                    </Link>
-                  </div>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
-      <div></div>
     </>
   )
 }
