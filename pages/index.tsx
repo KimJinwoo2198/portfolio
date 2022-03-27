@@ -4,6 +4,9 @@ import { motion } from 'framer-motion'
 import { projects, skills } from '../components/data'
 import SkillCard from '../components/SkillCard'
 import ProjectCard from '../components/ProjectCard'
+import { socialLinks } from '../components/data'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Home: NextPage = () => {
   return (
@@ -52,9 +55,38 @@ const Home: NextPage = () => {
                   damping: 100,
                   mass: 1.8
                 }}
-                className="pl-1 text-lg"
+                className="text-lg"
               >
                 프로그래머를 꿈꾸는 학생 개발자입니다. 👋
+              </motion.div>
+              <motion.div
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: 'spring',
+                  delay: 0.5,
+                  stiffness: 250,
+                  damping: 100,
+                  mass: 1.8
+                }}
+                className="flex space-x-2 pl-1 py-2"
+              >
+                {Object.entries(socialLinks).map(([_, socialLink]) => (
+                  <div key={socialLink.src}>
+                    <Link href={socialLink.href}>
+                      <a target="_blank" rel="noreferrer">
+                        <div className="cursor-pointer hover:opacity-60 w-6">
+                          <Image
+                            src={`/img/${socialLink.src}`}
+                            alt="SNS Links"
+                            width="100%"
+                            height="100%"
+                          />
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                ))}
               </motion.div>
             </div>
           </div>
@@ -129,7 +161,7 @@ const Home: NextPage = () => {
             }}
             className="pl-8 sm:pl-10 md:pl-20 2xl:pl-40 py-1 pr-8"
           >
-            제 토이 프로젝트들이에요. 아이템을 클릭하면 외부 사이트로 이동해요.
+            제가 참여한 프로젝트들이에요. 아이템을 클릭하면 외부 사이트로 이동해요.
           </motion.div>
           <div className="flex flex-row flex-grow flex-wrap justify-center md:space-x-8 pt-24">
             {Object.entries(projects).map(([_, project]) => (

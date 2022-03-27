@@ -74,31 +74,10 @@ const Header: FC = () => {
                   <Link href="#stack">Stack</Link>
                   <Link href="#projects">Projects</Link>
 
-                  <div className="absolute bottom-3 text-sm left-2 font-inter_medium text-blue-500 hover:text-blue-300">
+                  <div className="absolute bottom-3 text-sm left-2 font-inter_medium text-slate-600 hover:text-slate-400">
                     <Link href="https://github.com/chul0721/portfolio">
                       <a target="_blank">Made with ❤️ in Seoul</a>
                     </Link>
-                  </div>
-                  <div className="flex absolute bottom-16 left-3 space-x-2">
-                    {Object.entries(socialLinks).map(([_, socialLink]) => (
-                      <div key={socialLink.src} className="flex">
-                        <Link href={socialLink.href}>
-                          <a target="_blank" rel="noreferrer">
-                            <div className="cursor-pointer hover:opacity-60 w-5">
-                              <Image
-                                src={`/img/${socialLink.src}`}
-                                alt="SNS Links"
-                                width="100%"
-                                height="100%"
-                              />
-                            </div>
-                          </a>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex absolute bottom-9 left-2 text-sm font-inter_medium">
-                    Discord: chul0721#8165
                   </div>
                 </div>
               </motion.div>
