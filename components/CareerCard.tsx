@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import careerCardProps from '../typings/careerCardProps'
+import careerCardProps from '../utils/types/careerCardProps'
 import Link from 'next/link'
 
 const CareerCard: FC<careerCardProps> = (props) => {

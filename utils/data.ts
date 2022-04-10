@@ -1,6 +1,6 @@
-import projectCardProps from '../typings/projectCardProps'
-import skillCardProps from '../typings/skillCardProps'
-import socialLinkProps from '../typings/socialLinkProps'
+import projectCardProps from './types/projectCardProps'
+import skillCardProps from './types/skillCardProps'
+import socialLinkProps from './types/socialLinkProps'
 
 export const socialLinks: Record<string, socialLinkProps> = {
   github: {

@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function PortfolioApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -13,4 +13,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default PortfolioApp

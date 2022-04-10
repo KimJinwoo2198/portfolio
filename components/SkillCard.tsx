@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import skillCardProps from '../typings/skillCardProps'
+import skillCardProps from '../utils/types/skillCardProps'
 
 const SkillCard: FC<skillCardProps> = (props) => {
   const [isHovered, setHovered] = useState(false)

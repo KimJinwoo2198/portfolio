@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import descriptionProps from '../typings/descriptionProps'
+import descriptionProps from '../utils/types/descriptionProps'
 
 const Description: FC<descriptionProps> = (props) => {
   return (

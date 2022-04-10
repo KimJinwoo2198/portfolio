@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import titleProps from '../typings/titleProps'
+import titleProps from '../utils/types/titleProps'
 
 const Title: FC<titleProps> = (props) => {
   return (

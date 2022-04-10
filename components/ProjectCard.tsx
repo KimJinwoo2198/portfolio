@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { motion } from 'framer-motion'
-import projectCardProps from '../typings/projectCardProps'
+import projectCardProps from '../utils/types/projectCardProps'
 import Link from 'next/link'
 import Image from 'next/image'
 

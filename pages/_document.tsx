@@ -3,7 +3,7 @@ import React from 'react'
 
 React.useLayoutEffect = React.useEffect
 
-class MyDocument extends Document {
+class PortfolioDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
@@ -21,4 +21,4 @@ class MyDocument extends Document {
   }
 }
 
-export default MyDocument
+export default PortfolioDocument
