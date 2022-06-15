@@ -9,7 +9,7 @@ export const socialLinks: Record<string, socialLinkProps> = {
   },
   instagram: {
     src: 'instagram.png',
-    href: 'https://instagram.com/bottle___iron'
+    href: 'https://instagram.com/dev_kbc'
   },
   twitter: {
     src: 'twitter.png',
