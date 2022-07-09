@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Title from '../components/Title'
 import Description from '../components/Description'
 import SkillCard from '../components/SkillCard'
@@ -79,7 +78,7 @@ const Home: NextPage = () => {
                     <a target="_blank" rel="noreferrer">
                       <div className="cursor-pointer hover:opacity-60 w-6">
                         <Image
-                          src={`/img/${socialLink.src}`}
+                          src={`/img/icons/${socialLink.src}`}
                           alt="SNS Links"
                           width="100%"
                           height="100%"
@@ -127,23 +126,43 @@ const Home: NextPage = () => {
           <Description description="저의 여러 경험들이 담긴 경력이에요." />
           <div className="pl-8 sm:pl-10 md:pl-24 2xl:pl-44 py-1">
             <CareerCard
-              before={true}
               name="Team int"
-              href="https://teamint.xyz"
+              href="https://github.com/Team-int"
               role="리더"
               delay={0.5}
+              date="2020/04/06 ~ 2022/02/10"
             />
             <CareerCard
-              before={false}
+              name="사이버 가디언즈 보안 캠프"
+              href="https://cyberguardians.or.kr"
+              role="수료생"
+              delay={0.8}
+              date="2021 여름"
+            />
+            <CareerCard
+              name="2021 한국 코드페어 SW 공모전"
+              href="https://kcf.or.kr"
+              role="TOP 15"
+              delay={1.1}
+              date="2021"
+            />
+            <CareerCard
               name="한국 디스코드 리스트"
               href="https://koreanbots.dev"
               role="웹 개발자"
-              delay={0.8}
+              delay={1.4}
+              date="2022/03/27 ~ 현재"
             />
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="flex justify-center p-8 snap-end">
+        <div className="text-sm font-inter_medium text-slate-600 hover:text-slate-400">
+          <Link href="https://github.com/chul0721/portfolio">
+            <a target="_blank">Made with ❤️ in Seoul</a>
+          </Link>
+        </div>
+      </div>
     </AnimatePresence>
   )
 }

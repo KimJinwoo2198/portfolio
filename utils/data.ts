@@ -9,7 +9,7 @@ export const socialLinks: Record<string, socialLinkProps> = {
   },
   instagram: {
     src: 'instagram.png',
-    href: 'https://instagram.com/dev_kbc'
+    href: 'https://instagram.com/bottle___iron'
   },
   twitter: {
     src: 'twitter.png',
@@ -109,18 +109,18 @@ export const skills: Record<string, skillCardProps> = {
 }
 
 export const projects: Record<string, projectCardProps> = {
-  sotongi: {
-    name: '소통이',
-    desc: '새 학기 친구 걱정은 이제 그만! 학교, 반 등의 단위로 나뉜 게시판에서 친구와 친해지세요!',
-    src: 'sotongi.png',
-    color: 'black',
-    href: 'https://github.com/sotongi'
-  },
   asserlang: {
     name: '어쩔랭',
     desc: '유행어 "어쩔티비"에 영감을 받아 만든 난해한 프로그래밍 언어',
     src: 'asserlang.png',
     color: 'white',
     href: 'https://github.com/assertive-lang/asserlang'
+  },
+  school: {
+    name: '백현중 학생 자치회 커뮤니티',
+    desc: '백현중학교의 학생 자치회 커뮤니티입니다.',
+    src: 'school.png',
+    color: 'black',
+    href: 'https://github.com/BakhyunMS/community'
   }
 }

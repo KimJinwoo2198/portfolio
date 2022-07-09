@@ -12,17 +12,18 @@ const CareerCard: FC<careerCardProps> = (props) => {
         type: 'spring',
         delay: props.delay,
         stiffness: 320,
-        damping: 100,
+        damping: 140,
         mass: 1.8
       }}
     >
-      - {props.before && <>&nbsp;전(前)</>}&nbsp;
+      - &nbsp;
       <Link href={props.href}>
         <a target="_blank" className="text-sky-500 hover:text-sky-600">
           {props.name}&nbsp;
         </a>
       </Link>
       {props.role}
+      &nbsp;({props.date})
     </motion.p>
   )
 }

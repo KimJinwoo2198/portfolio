@@ -67,11 +67,19 @@ const Header: FC = () => {
                   <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#F4BF50]"></div>
                   <div className="w-2.5 h-2.5 ml-1.5 rounded-full bg-[#61C454]"></div>
                 </div>
-                <div className="flex flex-col space-y-2 pt-8 pl-4 pr-24 font-inter_medium">
-                  <Link href="#">Introduction</Link>
-                  <Link href="#stack">Stack</Link>
-                  <Link href="#projects">Projects</Link>
-                  <Link href="#career">Career</Link>
+                <div className="flex flex-col font-inter_medium bg-white">
+                  <Link href="#">
+                    <a className="border-y mt-8 pt-4 pb-3 pl-4 pr-24">Introduction</a>
+                  </Link>
+                  <Link href="#stack">
+                    <a className="border-b pt-4 pb-3 pl-4 pr-24">Stacks</a>
+                  </Link>
+                  <Link href="#projects">
+                    <a className="border-b pt-4 pb-3 pl-4 pr-24">Projects</a>
+                  </Link>
+                  <Link href="#career">
+                    <a className="border-b pt-4 pb-3 pl-4 pr-24">Career</a>
+                  </Link>
                 </div>
               </motion.div>
             )}

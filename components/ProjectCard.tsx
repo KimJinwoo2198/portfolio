@@ -56,7 +56,7 @@ const ProjectCard: FC<projectCardProps> = (props) => {
             </div>
 
             <Image
-              src={`/img/${props.src}`}
+              src={`/img/projects/${props.src}`}
               className={
                 isHovered
                   ? `z-0 absolute opacity-100 rounded-2xl border-${props.color}`

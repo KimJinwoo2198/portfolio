@@ -32,7 +32,7 @@ const SkillCard: FC<skillCardProps> = (props) => {
         </div>
         <div className="p-2 z-0 sm:p-4 md:p-7">
           <Image
-            src={`/img/${props.src}`}
+            src={`/img/skills/${props.src}`}
             className={isHovered ? 'opacity-50' : 'opacity-100'}
             alt="Stack"
             width="100%"
